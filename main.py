@@ -6,14 +6,14 @@ class Power:
         self.base = base
         self.exponent = exponent
 
-    def powerfunction(self):
-        if self.base.__class__.__name__ != "int" or self.exponent.__class__.__name__ != int:
+    def powerFunction(self):
+        if self.base.__class__.__name__ != "int":
             raise Exception
 
-        if self.base.__class__.__name__ > 10 or self.base.__class__.__name__ < 0:
-            raise Exception
-        if self.exponent.__class__.__name__ > 4 or self.exponent.__class__.__name__ < 0:
-            raise Exception
+        # if self.base.__class__.__name__ > 10 or self.base.__class__.__name__ < 0:
+        #     raise Exception
+        # if self.exponent.__class__.__name__ > 4 or self.exponent.__class__.__name__ < 0:
+        #     raise Exception
         result = pow(self.base, self.exponent)
         return result
 
