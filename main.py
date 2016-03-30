@@ -1,5 +1,5 @@
 # calcula la potencia de 2 ints con una base < 10 y exponente < 4, ambos positivos
-
+from dbConnection import dbConnection
 
 class Power:
     def __init__(self, base, exponent):
@@ -24,7 +24,9 @@ class Power:
 
 
 def main():
+    #Entrada a la base de datos
 
+    dbConnection1 = dbConnection('power')
     print 'Calcular potencia de tipo entero:\n'
     print 'Introduzca la base: (0<base<10)'
     base = raw_input()
@@ -33,10 +35,16 @@ def main():
     power = Power(base, exponent)
 
     resultado = power.powerFunction(power.base, power.exponent)
+    dic = {'resultado': resultado}
+    dbConnection.collection.save(dic)
+
+
+
     print 'la base es:'
     print power.base
     print 'el exponente es:'
     print power.exponent
+
 
 if __name__ == '__main__':
    main()
