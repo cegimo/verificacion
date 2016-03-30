@@ -8,7 +8,8 @@ class TestPower(unittest.TestCase):
         pass
 
     def test_power_calculation(self):
-        self.assertEqual(Power.powerFunction(1, 1), 1)
+        power = Power(1,1)
+        self.assertEqual(power.powerFunction(), 1)
 
     def test_fails_integers_and_caracters(self):
         self.assertRaises(TypeError, lambda: Power.powerFunction(2, 'a'))
@@ -35,13 +36,13 @@ class TestPower(unittest.TestCase):
         self.assertRaises(TypeError, lambda: Power.powerFunction(12, 8))
 
     def test_if_base_is_negative(self):
-        self.assertRaises(TypeError, lambda: Power.powerfunction(-4, 2))
+        self.assertRaises(TypeError, lambda: Power.powerFunction(-4, 2))
 
     def test_if_exponent_is_negative(self):
-        self.assertRaises(TypeError, lambda: Power.powerfunction(2, -3))
+        self.assertRaises(TypeError, lambda: Power.powerFunction(2, -3))
 
     def test_if_base_and_exponent_are_negative(self):
-        self.assertRaises(TypeError, lambda: Power.powerfunction(-3, -2))
+        self.assertRaises(TypeError, lambda: Power.powerFunction(-3, -2))
 
 if __name__ == '__main__':
     unittest.main()
